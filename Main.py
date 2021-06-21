@@ -13,15 +13,12 @@ def WindowPopUp(Title = "New Window",Size_X = 750, Size_Y = 500):
     Win = tk.Tk()
     #Set window
     Win.title(Title)
-    
     #Win.configure(width=Size_X, height=Size_Y)
     #Win.configure(bg='purple')
     text = tk.Text(Win,width=Size_X, height=Size_Y)
+    text.tag_configure('bold_italics', font=('Comic sans', 64, 'bold', 'italic'),foreground="darkred")
     text.pack()
-
-    text.insert('100.0', 'Human Detected, prepare to be eliminated')
-    
-    
+    text.insert('1.0', 'Human Detected, \nprepare to be eliminated', 'bold_italics')
     return Win
 
 #Renturn a bool if their is motion by compaire two frames
@@ -47,18 +44,8 @@ def IsMotion(vid):
         return False
     return True
 
-    
-    
-
 # define a video capture object
 vid = cv2.VideoCapture(0)
-
-
-
-
-
-
-
 
 while(True):
 
@@ -69,21 +56,18 @@ while(True):
           if (check):
               break
 
-
           if keyboard.is_pressed("p"):
               break
-
             
     if keyboard.is_pressed("p"):
         break
     
     win = WindowPopUp("Death", 1000,1000)
     win.update()
-    time.sleep(5)
+    time.sleep(3)
     win.destroy()
     
 
-  
 # After the loop release the cap object
 vid.release()
 # Destroy all the windows
