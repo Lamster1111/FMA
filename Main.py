@@ -29,7 +29,7 @@ def IsMotion(vid):
     #Gets frist frame
     ret, frame01 = vid.read()
     #Waits for 1 second
-    time.sleep(1)
+    time.sleep(0.2)
     #Gets second frame
     ret, frame02 = vid.read()
     diff = cv2.subtract(frame01,frame02)
