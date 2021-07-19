@@ -2,7 +2,7 @@
 
 ## Facial monitoring alert ##
 
-- Deteced motion on camare 
+- Detect motion on camera 
 - Open a alert window
 - Close windows
 - Loops back around
